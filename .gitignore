@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# Data (corpus is copied from the private PANCH repo; index is rebuilt)
+data/
+!data/.gitkeep
+
+# Eval scratch
+*.log
+.pytest_cache/

@@ -1,0 +1,159 @@
+{
+  "description": "Golden QA set for juris-rag eval. gold_sections are (source, section_title) pairs that MUST be retrievable for a hit. keyphrases must appear in a correct answer. unanswerable=true questions must be refused by the generator.",
+  "questions": [
+    {
+      "id": "q01",
+      "question": "What AWS services make up PANCH's core stack?",
+      "gold_sections": [["Panch_TRD", "2. AWS services and requirements"]],
+      "keyphrases": ["Lambda", "DynamoDB"],
+      "unanswerable": false
+    },
+    {
+      "id": "q02",
+      "question": "How does the three-judge tribunal work and what happens when judges disagree?",
+      "gold_sections": [["Panch_TRD", "5. Tribunal workflow (Step Functions)"]],
+      "keyphrases": ["Step Functions", "judge"],
+      "unanswerable": false
+    },
+    {
+      "id": "q03",
+      "question": "What is the spread threshold and what units is it measured in?",
+      "gold_sections": [["Panch_TRD", "5. Tribunal workflow (Step Functions)"], ["Panch_TRD", "8. Bias and reliability controls"]],
+      "keyphrases": ["bps", "spread"],
+      "unanswerable": false
+    },
+    {
+      "id": "q04",
+      "question": "Where are judge model IDs stored so they can be changed without redeploying?",
+      "gold_sections": [["PANCH_AGENTS", "Working rules"], ["PANCH_AGENTS", "Security"], ["Panch_TRD", "2. AWS services and requirements"]],
+      "keyphrases": ["SSM", "model"],
+      "unanswerable": false
+    },
+    {
+      "id": "q05",
+      "question": "What schema must every judge's output conform to?",
+      "gold_sections": [["CONTRACTS", "Frozen Contracts"], ["Panch_TRD", "6. Judge contract"]],
+      "keyphrases": ["findingsOfFact", "payeeShareBps"],
+      "unanswerable": false
+    },
+    {
+      "id": "q06",
+      "question": "How does PANCH defend against prompt injection in evidence?",
+      "gold_sections": [["SECURITY", "Guardrails"], ["Panch_TRD", "9. Security and privacy"], ["PANCH_AGENTS", "Security"], ["SECURITY", "Panch — Security Notes (Day 3 hardening)"]],
+      "keyphrases": ["injection", "evidence"],
+      "unanswerable": false
+    },
+    {
+      "id": "q07",
+      "question": "Why was the PROMPT_ATTACK guardrail filter removed from the Bedrock guardrail config?",
+      "gold_sections": [["Panch_TRD", "9. Security and privacy"], ["SECURITY", "Guardrails"]],
+      "keyphrases": ["false", "PROMPT_ATTACK"],
+      "unanswerable": false
+    },
+    {
+      "id": "q08",
+      "question": "What is the evidence envelope and why does evidence get blinded?",
+      "gold_sections": [["Panch_TRD", "5. Tribunal workflow (Step Functions)"], ["Panch_TRD", "8. Bias and reliability controls"], ["PANCH_AGENTS", "Working rules"], ["judge-1", "Document"], ["judge-2", "Document"], ["judge-3", "Document"]],
+      "keyphrases": ["blind", "evidence"],
+      "unanswerable": false
+    },
+    {
+      "id": "q09",
+      "question": "What happens when a case escalates or a ruling is overdue?",
+      "gold_sections": [["Panch_PRD", "2. Solution"], ["Panch_PRD", "7. Core user flow"], ["Panch_TRD", "5. Tribunal workflow (Step Functions)"], ["Panch_PRD", "6. Functional requirements"]],
+      "keyphrases": ["escalat"],
+      "unanswerable": false
+    },
+    {
+      "id": "q10",
+      "question": "How is the frontend deployed and what build system does it use?",
+      "gold_sections": [["PANCH_README", "🚀 Setup & Local Development"], ["PANCH_README", "🏗️ Phase 1 / 2 Infrastructure (Completed)"], ["PANCH_README", "☁️ AWS Services Actually Used"], ["PANCH_README", "🧑‍💻 Handover: Frontend (Piyush)"], ["Panch_TRD", "11. Infrastructure as code"]],
+      "keyphrases": ["Amplify", "Next"],
+      "unanswerable": false
+    },
+    {
+      "id": "q10b",
+      "question": "What is PANCH and who is it for?",
+      "gold_sections": [["PANCH_README", "Panch"], ["PANCH_README", "📚 Essential Reading"]],
+      "keyphrases": ["dispute"],
+      "unanswerable": false
+    },
+    {
+      "id": "q11",
+      "question": "What is the judge cross-examination flow and how many rounds are allowed?",
+      "gold_sections": [["Panch_TRD", "5. Tribunal workflow (Step Functions)"], ["CONTRACTS", "Frozen Contracts"], ["CONTRACTS", "Contracts (Frozen)"]],
+      "keyphrases": ["cross", "round"],
+      "unanswerable": false
+    },
+    {
+      "id": "q12",
+      "question": "What data model does PANCH use for cases and evidence?",
+      "gold_sections": [["Panch_TRD", "3. Data model"], ["Panch_PRD", "8. Data requirements (where data matters most)"]],
+      "keyphrases": ["DynamoDB", "case"],
+      "unanswerable": false
+    },
+    {
+      "id": "q13",
+      "question": "What are the cost-tracking and budget controls in the pipeline?",
+      "gold_sections": [["Panch_TRD", "12. Observability and cost"], ["Panch_TRD", "7. Where data is used in the pipeline"], ["Panch_TRD", "2. AWS services and requirements"]],
+      "keyphrases": ["cost"],
+      "unanswerable": false
+    },
+    {
+      "id": "q14",
+      "question": "What is the presiding judge's role in the tribunal?",
+      "gold_sections": [["presiding", "Document"], ["Panch_TRD", "6. Judge contract"], ["Panch_TRD", "5. Tribunal workflow (Step Functions)"]],
+      "keyphrases": ["presiding", "verdict"],
+      "unanswerable": false
+    },
+    {
+      "id": "q15",
+      "question": "How do agents working on this repo decide what to build each day?",
+      "gold_sections": [["PANCH_AGENTS", "Working rules"], ["TEAM_PLAN", "3. Day-by-Day Plan"]],
+      "keyphrases": ["phase"],
+      "unanswerable": false
+    },
+    {
+      "id": "q16",
+      "question": "What is PANCH's policy on secrets and IAM permissions?",
+      "gold_sections": [["PANCH_AGENTS", "Security"], ["Panch_TRD", "9. Security and privacy"]],
+      "keyphrases": ["least-privilege", "SSM"],
+      "unanswerable": false
+    },
+    {
+      "id": "q17",
+      "question": "What is the escrow and on-chain settlement plan?",
+      "gold_sections": [["Panch_TRD", "10. Simulated escrow and on-chain stretch"], ["CONTRACTS", "Frozen Contracts"]],
+      "keyphrases": ["escrow", "ArbiterEscrow"],
+      "unanswerable": false
+    },
+    {
+      "id": "q18",
+      "question": "What did the team plan to accomplish on Day 1 of the build?",
+      "gold_sections": [["TEAM_PLAN", "3. Day-by-Day Plan"], ["TEAM_PLAN", "2. Contracts to Freeze on Day 1"], ["TEAM_PLAN", "8. Messages to Teammates"]],
+      "keyphrases": ["Day 1"],
+      "unanswerable": false
+    },
+    {
+      "id": "q19",
+      "question": "What is PANCH's token economics and revenue model for 2027?",
+      "gold_sections": [],
+      "keyphrases": [],
+      "unanswerable": true
+    },
+    {
+      "id": "q19b",
+      "question": "Which emoji-heavy sections from the README discuss the frontend handover, and what did Piyush own?",
+      "gold_sections": [["PANCH_README", "🧑‍💻 Handover: Frontend (Piyush)"]],
+      "keyphrases": ["frontend"],
+      "unanswerable": false
+    },
+    {
+      "id": "q20",
+      "question": "How does PANCH integrate with Slack and Microsoft Teams?",
+      "gold_sections": [],
+      "keyphrases": [],
+      "unanswerable": true
+    }
+  ]
+}

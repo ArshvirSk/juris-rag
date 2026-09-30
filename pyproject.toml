@@ -1,0 +1,23 @@
+[project]
+name = "juris-rag"
+version = "0.1.0"
+description = "End-to-end RAG with cross-encoder reranking, inline citations, and a measured eval harness"
+requires-python = ">=3.11"
+dependencies = [
+    "sentence-transformers>=3.0",
+    "chromadb>=0.5",
+    "google-genai>=1.0",
+    "pypdf>=4.0",
+    "python-docx>=1.1",
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.30",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.5",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
